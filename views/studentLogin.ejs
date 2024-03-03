@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="/css/studentLogin.css" />
+</head>
+
+<body>
+    <div class="sub-page-student">
+        <div class="div">
+            <!--header-->
+            <div class="header-BG">
+                <div class="survey-system">
+                    Survey <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    System
+                </div>
+            </div>
+            <!-- end of header-->
+
+            <!-- middle-->
+            <p class="change-to-student">수강생</p>
+            <a href="/user/adminLogin" class="change-to-admin">관리자</a>
+            <img class="img" src="../img/rectangle-6.svg" />
+
+
+            <form action="/auth/studentLogin" method="POST" class="login-form">
+                <input type="text" class="input-form admin-num" name="userId" placeholder="아이디">
+                <input type="password" class="input-form password" name="password" placeholder="비밀번호">
+
+                <!-- login button-->
+                <input type="submit" class="login-button" value="로그인">
+
+            </form>
+            <a href="" class="move-to-find">아이디/비밀번호 찾기</a>
+            <a href="/user/studentSignUp" class="move-to-signup">회원가입</a>
+
+
+            <!-- end of middle-->
+
+            <!-- footer-->
+            <div class="footer"></div>
+
+            <!-- end of footer-->
+        </div>
+    </div>
+</body>
+
+</html>

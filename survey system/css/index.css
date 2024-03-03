@@ -1,0 +1,102 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:700,400");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.index-page {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.index-page .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+.index-page .header-BG {
+  position: absolute;
+  width: 1471px;
+  height: 110px;
+  top: 0;
+  left: -31px;
+  background-color: #c2dedc;
+}
+
+.index-page .survey-system {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #116a7b;
+  font-size: 35px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index-page .loginBtn {
+  position: absolute;
+  width: 102px;
+  height: 45px;
+  top: 33px;
+  left: 1202px;
+}
+
+.index-page .btn-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 193px;
+  height: 45px;
+  top: 28px;
+  left: 293px;
+}
+
+.index-page .commonBtn {
+  background-color: #ece5c7;
+  border-color: #ece5c7;
+  border-radius: 25px;
+  font-family: "Roboto", Helvetica;
+  font-weight: bold;
+  color: #116a7b;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 8px;
+}
+
+
+.index-page .footer {
+  position: absolute;
+  width: 1440px;
+  height: 171px;
+  top: 853px;
+  left: 0;
+  background-color: #116a7b;
+}

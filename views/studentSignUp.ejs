@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/studentSignUp.css" />
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+
+        $(function () {
+            const flag = true;
+
+            //아이디 중복확인 
+            $("#selectIdBtn").on("click", selectStudentId);
+
+            //비밀번호 정규표현식 사용 
+            $("#StudentPassword").on("keyup", checkPasswordRegex);
+
+            //비밀번호 확인이 일치하는지의 여부 
+            $("#checkPassword").on("keyup", checkPassword);
+
+            //관리자명 조회를 위한 버튼 클릭 & 모달창 생성 
+            $("#selectBtn").on("click", selectAdmin);
+
+
+            //모달창 닫기 
+            $("#closeBtn").on("click", closeModal);
+
+            //제출
+            $("#submitBtn").on("click", signUp);
+
+
+
+        });
+
+        function selectStudentId() {
+            const studentId = $("#studentId").val();
+            //alert(studentId);
+            $.ajax({
+                type: "POST",
+                url: "/user/readOneStudentId",
+                dataType: "json",
+                data: { 'studentId': studentId },
+                success: function (resp) {
+                    if (!resp.length) {
+                        alert("아이디 사용이 가능합니다.");
+                        flag = true;
+                        //alert(flag);
+                    } else {
+                        alert("중복된 아이디가 있습니다. 다시 입력해 주세요.");
+                        studentId.select();
+                        studentId.focus();
+                        flag = false;
+                    }
+
+                }
+            })
+        }
+
+        function choiceAdmin() {
+            //alert("되니?");
+            //alert($(this).val());
+            const adminId = { "adminId": $(this).val() };
+            $.ajax({
+                type: "POST",
+                url: "/user/readOneAdmin",
+                dataType: "json",
+                data: adminId,
+                success: function (resp) {
+                    //alert(JSON.stringify(resp)); //조회한 관리자의 모든 정보가 넘어옴
+
+                    const val = [];
+                    for (let [key, value] of Object.entries(resp)) {
+                        // console.log(`key값 : ${key}`);
+                        // console.log(`value값 : ${value}`);
+                        val.push(value);
+
+                    }
+                    //console.log(val[3]);;
+                    const adminId = val[0];
+                    const adminName = val[3];
+                    $("#adminName").val(adminName);
+                    $("#dutyAdmin").val(adminId);
+                    closeModal();
+
+
+
+                }
+            })
+        }
+
+        function checkPasswordRegex() {
+            //정규표현식
+            const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).{8,16}$/;
+
+            //고객이 입력한 비밀번호 
+            const password = $("#StudentPassword").val();
+
+            if (!regex.test(password)) {
+                data = `<b style="color:red;">비밀번호는 8자리 이상 특수문자, 영어대소문자를 포함해야합니다.</b>`;
+                $("#passwordRegex").html(data);
+                return false;
+            }
+            $("#passwordRegex").text("");
+            return true;
+        }
+
+        function checkPassword() {
+            const checkPassword = $("#checkPassword").val();
+            const password = $("#StudentPassword").val();
+
+            if (checkPassword != password) {
+                data = `<b style="color:red;">입력하신 비밀번호와 일치하지 않습니다.</b>`;
+                $("#checkError").html(data);
+                return false;
+            }
+
+            $("#checkError").text("");
+            return true;
+
+        }
+
+        function selectAdmin() {
+            //alert('눌렀지?');
+            const modal = $("#modal");
+            modal.addClass("show-modal");
+
+            $.ajax({
+                type: "GET",
+                url: "/user/selectAdmin",
+                dataType: "json",
+                success: function (resp) {
+                    let tags = `<table border="1" id="adminTable">
+                            <tr>
+                                <th>이름</th>
+                                <th></th>
+                            </tr>`;
+                    for (var i = 0; i < resp.length; i++) {
+                        tags += `<tr>
+                                    <td>` + resp[i].name + `</td>
+                                    <td>
+                                        <button type=button class="choiceBtn" value="${resp[i]._id}">선택</button>
+                                    </td>
+                                </tr>`;
+                    }
+
+                    tags += ` </table>`;
+
+
+                    $("#outputTable").html(tags);
+
+                    //모달창 선택버튼
+                    $(".choiceBtn").on("click", choiceAdmin);
+                }
+            })
+        };
+
+        function closeModal() {
+            const modal = $("#modal");
+            modal.removeClass("show-modal");
+        };
+
+        function signUp(e) {
+            e.preventDefault();
+
+            //각 input박스의 비어있는지에 대한 여부 확인 
+            if ($("#studentName").val().length == 0) {
+                alert("이름을 입력해주세요.");
+                return false;
+            }
+
+            if ($("#studentId").val().length == 0) {
+                alert("아이디를 입력해주세요.");
+                return false;
+            }
+
+            if ($("#StudentPassword").val().length == 0) {
+                alert("비밀번호를 입력해주세요.");
+                return false;
+            }
+
+            if ($("#studentPhone").val().length == 0) {
+                alert("연락처를 입력해주세요.");
+                return false;
+            }
+
+            if ($("#checkPassword").val().length == 0) {
+                alert("비밀번호 확인이 필요합니다.");
+                return false;
+            }
+
+            if ($("#dutyAdmin").val().length == 0) {
+                alert("담당 관리자를 설정해주세요.");
+                return false;
+            }
+
+            if ((!checkPasswordRegex() || !checkPassword()) && flag == false) {
+                alert("데이터를 모두 정확히 입력해 주세요.");
+                return;
+            } else {
+                $("#signUpForm").submit();
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="sub-page-student">
+        <div class="wrapper">
+
+            <!--header-->
+            <div class="header-BG">
+                <div class="survey-system">
+                    Survey <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    System
+                </div>
+            </div>
+            <!-- end of header-->
+
+            <!--middle-->
+            <div class="page-title">수강생 회원가입</div>
+
+            <form action="/auth/studentSignUp" method="POST" id="signUpForm">
+                <div class="input-title">이름</div>
+                <input type="text" class="input-box" id="studentName" name="name">
+
+                <div class="input-title">아이디</div>
+                <input type="text" class="input-box" name="userId" id="studentId">
+                <input type="button" class="find-studentId" value="중복확인" id="selectIdBtn">
+                <div id="idError"></div>
+
+                <div class="input-title">비밀번호</div>
+                <input type="password" class="input-box" name="password" id="StudentPassword">
+                <div id="passwordRegex"></div>
+
+                <div class="input-title">연락처</div>
+                <input type="text" class="input-box" name="phone" id="studentPhone">
+
+                <div class="input-title">관리자명</div>
+                <input type="text" class="input-box" id="adminName">
+                <input type="hidden" name="admin" id="dutyAdmin">
+
+                <div class="check-password">비밀번호 확인</div>
+                <input type="password" class="input-box-1" id="checkPassword">
+                <div id="checkError"></div>
+
+                <input type="button" class="find-admin-button" value="조회" id="selectBtn">
+
+                <!-- select Admin modal-->
+                <div class="modal-container" id="modal">
+                    <div class="modal">
+                        <h2>관리자 선택</h2>
+                        <div id="outputTable"></div>
+                        <button type="button" id="closeBtn">닫기</button>
+                    </div>
+                </div>
+                <!-- end of modal -->
+
+                <input type="button" class="signUp-button" id="submitBtn" value="회원가입">
+
+
+
+            </form>
+            <!--end of middle-->
+
+
+            <!--footer-->
+            <div class="footer"></div>
+
+        </div>
+    </div>
+</body>
+
+</html>

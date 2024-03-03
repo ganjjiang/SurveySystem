@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+</head>
+
+<body>
+    <div class="index-page">
+
+        <!--header-->
+        <div class="header-BG">
+            <div class="survey-system">
+                Survey <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System
+            </div>
+        </div>
+        <!-- end of header-->
+
+        <!-- header login && signup button-->
+        <% if (isLoggedIn) { %>
+            <button class="commonBtn"><a href="#">로그아웃</a></button>
+            <% } else { %>
+                <div class="btn-wrapper">
+                    <button class="commonBtn btnLogin"><a href="/user/studentLogin">로그인</a></button>
+                    <button class="commonBtn btnSignUp"><a href="/user/studentSignUp">수강생 회원가입</a></button>
+                    <button class="commonBtn btnSignUp"><a href="/user/adminSignUp">관리자 회원가입</a></button>
+                </div>
+                <% } %>
+                    <!-- end of bottons-->
+
+                    <!-- footer-->
+                    <div class="footer"></div>
+
+    </div>
+</body>
+
+</html>

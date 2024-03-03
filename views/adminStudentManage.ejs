@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/adminStudentManage.css" />
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+
+        $(function () {
+
+
+        });
+
+        //학생 이름카드를 클릭하면 학생 정보의 교체
+        function readStudent(studentId) {
+            //alert("클릭?");
+
+            //교체할 학생의 정보를 넣을 곳 
+            const name = $(".name").html();
+            const userId = $(".userId").html();
+            const phone = $(".phone").html();
+
+            //alert(name + userId + phone);
+
+            $.ajax({
+                type: "POST",
+                url: "/admin/readOneStudent",
+                dataType: "json",
+                data: { "studentId": studentId },
+                success: function (resp) {
+                    //alert(JSON.stringify(resp));
+
+                    //for문을 돌려서 가져온 한명의 학생의 정보를 바꾼다.
+                }
+            })
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="sub-page-admin-user">
+        <div class="div">
+
+            <!-- include student Header-->
+            <%- include('./include/adminHeader') %>
+                <!-- /include student Header-->
+
+                <!-- middle -->
+
+                <div class="page-title">수강생 관리</div>
+
+
+                <!-- 동적생성 부분-->
+                <% students.forEach(student=> { %>
+                    <div class="student-name-card-lf">
+                        <div class="card-wrapper">
+                            <a href="javascript:void(0);" onclick="readStudent('<%= student._id %>');"
+                                class="name-card">
+                                <%= student.name %>
+                            </a>
+                        </div>
+                    </div>
+                    <% }) %>
+                        <div class="student-name-card-rt">
+                            <div class="sub-page">
+                                <div class="card2">
+                                    <img class="img" src="../img/profile.jpg" />
+                                    <div class="info">이름 :
+                                        <div class="info2 name">
+                                            <%= first.name %>
+                                        </div>
+                                    </div>
+                                    <div class="info">아이디 :
+                                        <div class="info2 userId">
+                                            <%= first.userId %>
+                                        </div>
+                                    </div>
+                                    <div class="info">연락처 :
+                                        <div class="info2 phone">
+                                            <%= first.phone %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end of middle-->
+
+                        <!-- footer-->
+                        <div class="footer"></div>
+                        <!-- end of footer-->
+
+        </div>
+    </div>
+</body>
+
+</html>

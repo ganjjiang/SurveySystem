@@ -1,0 +1,27 @@
+<!-- all admin page common part-->
+
+<!--header-->
+<div class="header-BG">
+    <div class="survey-system">
+        Survey <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        System
+    </div>
+    <% if (isLoggedIn) { %>
+        <button class="commonBtn btn-wrapper"><a href="/auth/logout">로그아웃</a></button>
+        <% } %>
+</div>
+<!-- end of header-->
+
+<!-- menu bar-->
+<ul>
+    <li class="side-menu-wrapper"></li>
+    <li><a href="" class="side-menu">수강생 관리</a></li>
+    <li><a href="" class="side-menu">설문 진행 현황</a></li>
+    <li><a href="" class="side-menu">설문지 생성</a></li>
+    <li><a href="" class="side-menu">설문 결산</a></li>
+</ul>
+
+
+<!-- end of menu bar-->
+
+<!-- end of all admin page common part-->

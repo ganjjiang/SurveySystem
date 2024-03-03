@@ -1,0 +1,190 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:700,400");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Abhaya Libre ExtraBold-Regular";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/612cee6e7d4dd4a7d49e33de/fonts/abhayalibre-extrabold.ttf") format("truetype");
+}
+
+
+
+
+.sub-page-student {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.sub-page-student .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+.sub-page-student .header-BG {
+  position: absolute;
+  width: 1471px;
+  height: 110px;
+  top: 0;
+  left: -33px;
+  background-color: #c2dedc;
+}
+
+.sub-page-student .survey-system {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #116a7b;
+  font-size: 35px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sub-page-student .footer {
+  position: absolute;
+  width: 1440px;
+  height: 150px;
+  top: 874px;
+  left: 0;
+  background-color: #116a7b;
+}
+
+/** 수강생 관리자 선택 **/
+
+.sub-page-student .change-to-student {
+  top: 247px;
+  left: 563px;
+  font-family: "Abhaya Libre ExtraBold-Regular", Helvetica;
+  font-weight: 400;
+  color: #116a7b;
+  font-size: 35px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.sub-page-student .change-to-admin {
+  top: 247px;
+  left: 781px;
+  font-family: "Abhaya Libre ExtraBold-Regular", Helvetica;
+  font-weight: 400;
+  color: #116a7b;
+  font-size: 35px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.sub-page-student .img {
+  position: absolute;
+  width: 191px;
+  height: 8px;
+  top: 225px;
+  left: 516px;
+}
+
+
+
+/**로그인 폼 **/
+.sub-page-student .login-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 383px;
+  left: 421px;
+}
+
+.sub-page-student .input-form {
+  width: 612px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: #c2dedc;
+}
+
+/**.sub-page-student .admin-num {}**/
+
+.sub-page-student .password {
+  margin-top: 25px;
+}
+
+.sub-page-student .login-button {
+  width: 612px;
+  height: 100px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #116a7b;
+  font-size: 35px;
+  text-align: center;
+  background-color: #c2dedc;
+  border-radius: 10px;
+  border-color: #c2dedc;
+  margin-top: 25px;
+}
+
+
+/**회원가입 && 아이디 비번 찾기 **/
+
+.sub-page-student .move-to-find {
+  top: 770px;
+  left: 847px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #92c7cf;
+  font-size: 20px;
+  text-decoration: underline;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.sub-page-student .move-to-signup {
+  top: 770px;
+  left: 418px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #116a7b;
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}

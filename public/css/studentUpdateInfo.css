@@ -1,0 +1,298 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:700,200");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Abhaya Libre ExtraBold-Regular";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/612cee6e7d4dd4a7d49e33de/fonts/abhayalibre-extrabold.ttf") format("truetype");
+}
+
+
+.sub-page-student {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.sub-page-student .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+
+.sub-page-student .header-BG {
+  position: absolute;
+  width: 1471px;
+  height: 110px;
+  top: 0;
+  left: -31px;
+  background-color: #c2dedc;
+}
+
+.sub-page-student .survey-system {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #116a7b;
+  font-size: 35px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.commonBtn {
+  background-color: #ece5c7;
+  border-color: #ece5c7;
+  border-radius: 25px;
+  font-family: "Roboto", Helvetica;
+  font-weight: bold;
+  color: #116a7b;
+  font-size: 15px;
+  text-align: center;
+  margin-left: 8px;
+}
+
+.btn-wrapper {
+  position: relative;
+  width: 87px;
+  height: 35px;
+  top: 28px;
+  left: 1300px;
+}
+
+/**menu bar **/
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+
+}
+
+.sub-page-student .side-menu {
+  display: inline-block;
+  height: 96px;
+  top: 109px;
+  right: 0px;
+  background-color: #eee7dccc;
+  box-shadow: 0px 2px 4px #00000040;
+  position: relative;
+  margin: 3px;
+  width: 298px;
+}
+
+.side-menu-wrapper {
+  height: 764px;
+  top: 110px;
+  left: 0px;
+  background-color: #e4e4d080;
+  position: absolute;
+  width: 298px;
+}
+
+/**end of menu bar**/
+
+
+
+.sub-page-student .page-title {
+  top: 186px;
+  left: 411px;
+  font-family: "Abhaya Libre ExtraBold-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 30px;
+  position: absolute;
+  color: #116a7b;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.sub-page-student .input-box {
+  position: relative;
+  width: 290px;
+  height: 64px;
+  top: 61px;
+  left: 564px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: #e5e1da;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-page-student .input-name {
+  top: 99px;
+  left: 385px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 200;
+  font-size: 25px;
+  position: relative;
+  color: #116a7b;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.sub-page-student .input-box-2 {
+  top: 467px;
+  left: 1112px;
+  position: absolute;
+  width: 290px;
+  height: 64px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: #e5e1da;
+}
+
+.sub-page-student .input-name-2 {
+  top: 482px;
+  left: 904px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 200;
+  font-size: 25px;
+  position: absolute;
+  color: #116a7b;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.sub-page-student .find-admin-button {
+  position: absolute;
+  width: 91px;
+  height: 41px;
+  top: 659px;
+  left: 904px;
+  background-color: #c2dedc;
+  border-radius: 10px;
+  border-color: #c2dedc;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #116a7b;
+  font-size: 25px;
+  text-align: center;
+}
+
+#passwordRegex {
+  width: 500px;
+  position: absolute;
+  top: 538px;
+  left: 576px;
+  font-size: 12px;
+}
+
+#checkError {
+  width: 400px;
+  position: absolute;
+  top: 538px;
+  left: 1126px;
+  font-size: 12px;
+}
+
+.modal-container {
+  background: rgba(0, 0, 0, .5);
+  display: none;
+  /* this is how we cover the entire page */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-container.show-modal {
+  display: block;
+}
+
+.modal {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+  text-align: center;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+#adminTable {
+  position: relative;
+  left: 144px;
+}
+
+#closeBtn {
+  position: relative;
+  margin: 10px;
+}
+
+td {
+  padding: 5px;
+}
+
+
+.sub-page-student .modify-button {
+  position: absolute;
+  width: 165px;
+  height: 60px;
+  top: 780px;
+  left: 1244px;
+  background-color: #c2dedc;
+  border-radius: 10px;
+  border-color: #c2dedc;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #116a7b;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+
+
+.sub-page-student .footer {
+  position: absolute;
+  width: 1440px;
+  height: 150px;
+  top: 874px;
+  left: 0;
+  background-color: #116a7b;
+}
