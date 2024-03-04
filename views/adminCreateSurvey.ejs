@@ -6,6 +6,64 @@
     <link rel="stylesheet" href="/css/adminCreateSurvey.css" />
     <link rel="stylesheet" href="/css/includeCss/adminHeader.css" />
     <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            //질문 추가하기 버튼 누르기 
+            $("#addBtn").on('click', addQuestion);
+        });
+
+        function addQuestion() {
+            //alert("눌렀쥬?");
+
+            const basic = `<div class="multiple-choice">
+            <div class="quesstion-num">1.</div>
+
+            <!-- select question type dropbox-->
+            <div class="change-question-type">
+              <select name="" id="" class="select-question-type">
+                <option class="select-type" selected>객관식</option>
+                <option class="select-type">주관식</option>
+                <option class="select-type">만족도선택</option>
+              </select>
+            </div>
+            <!-- end of dropbox-->
+
+            <!-- question box-->
+            <div class="question-title">
+              <textarea class="question-text" placeholder="질문 입력"></textarea>
+            </div>
+
+            <!-- write multiple choice-->
+            <div class="multiple-choice-box">
+              <div class="choice-num">1.</div>
+              <input type="text" class="choice-text" placeholder="항목 1">
+            </div>
+            <div class="multiple-choice-box">
+              <div class="choice-num">2.</div>
+              <input type="text" class="choice-text" placeholder="항목 2">
+            </div>
+            <!-- end of multiple choice-->
+
+
+            <!-- add question button-->
+            <div class="add-question-button2">
+              <input type="button" class="add-btn" value="질문 추가하기">
+            </div>
+
+
+            <!-- add choice button-->
+            <div class="add-choice-button">
+              <input type="button" class="add-btn" value="항목 추가하기">
+            </div>
+
+
+          </div> <!-- end of multiple choice box-->`;
+
+            $(".add-question-button").html('');
+            $(".addQuestSpot").html(basic);
+
+        }
+    </script>
 </head>
 
 <body>
@@ -30,14 +88,15 @@
                             <textarea class="explanation-text" placeholder="설문 설명 입력"></textarea>
                         </div>
                     </div>
+
+                    <div class="add-question-button">
+                        <input type="button" class="add-question-btn" id="addBtn" value="질문 추가하기">
+                    </div>
+
+                    <div class="addQuestSpot"></div>
                 </form>
                 <!-- end of survey information box-->
 
-                <!-- add question button-->
-                <div class="add-question-button">
-                    <input type="button" class="add-question-btn" value="질문 추가하기">
-                </div>
-                <!-- end of button-->
 
 
 

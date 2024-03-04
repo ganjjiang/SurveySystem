@@ -137,6 +137,147 @@ a {
   background-color: #ffffff;
 }
 
+/**객관식 css **/
+
+.sub-page-admin-user .multiple-choice {
+  position: absolute;
+  width: 962px;
+  height: 451px;
+  top: 455px;
+  left: 411px;
+}
+
+.sub-page-admin-user .quesstion-num {
+  top: 42px;
+  left: 71px;
+  font-weight: 900;
+  color: #116a7b;
+  font-size: 40px;
+  white-space: nowrap;
+  position: absolute;
+  font-family: "Roboto", Helvetica;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sub-page-admin-user .change-question-type {
+  position: absolute;
+  width: 281px;
+  height: 60px;
+  top: 29px;
+  left: 133px;
+}
+
+.sub-page-admin-user .select-question-type {
+  position: relative;
+  width: 279px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 3px solid;
+  border-color: #116a7b;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.sub-page-admin-user .select-type {
+  width: 100px;
+  top: 18px;
+  left: 18px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 25px;
+  position: absolute;
+}
+
+.sub-page-admin-user .question-title {
+  position: absolute;
+  width: 894px;
+  height: 48px;
+  top: 128px;
+  left: 42px;
+}
+
+.sub-page-admin-user .question-text {
+  top: 0;
+  left: 54px;
+  bottom: 5px;
+  font-family: "Roboto", Helvetica;
+  color: black;
+  font-size: 25px;
+  white-space: nowrap;
+  position: absolute;
+  border: none;
+  width: 820px;
+}
+
+.sub-page-admin-user .multiple-choice-box {
+  position: relative;
+  width: 849px;
+  height: 53px;
+  top: 208px;
+  left: 89px;
+}
+
+.sub-page-admin-user .choice-text {
+  width: 200px;
+  top: 5px;
+  left: 44px;
+  font-weight: 800;
+  color: #00000066;
+  font-size: 30px;
+  position: absolute;
+  font-family: "Roboto", Helvetica;
+  border: none;
+}
+
+.sub-page-admin-user .choice-num {
+  top: 2px;
+  left: 0;
+  font-weight: 900;
+  color: #116a7b;
+  font-size: 36px;
+  white-space: nowrap;
+  position: absolute;
+  font-family: "Roboto", Helvetica;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sub-page-admin-user .add-question-button2 {
+  position: absolute;
+  width: 234px;
+  height: 75px;
+  top: 357px;
+  left: 42px;
+}
+
+.sub-page-admin-user .add-choice-button {
+  position: absolute;
+  width: 234px;
+  height: 75px;
+  top: 357px;
+  left: 327px;
+}
+
+.sub-page-admin-user .add-btn {
+  width: 232px;
+  height: 75px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 6px solid;
+  border-color: #116a7b;
+  font-weight: 800;
+  color: #000000;
+  font-size: 28px;
+  font-family: "Roboto", Helvetica;
+}
+
+/**객관식 css **/
+
 /**footer**/
 .sub-page-admin-user .footer {
   position: absolute;
