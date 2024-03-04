@@ -1,0 +1,148 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:700,800");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Abhaya Libre ExtraBold-Regular";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/612cee6e7d4dd4a7d49e33de/fonts/abhayalibre-extrabold.ttf") format("truetype");
+}
+
+
+.sub-page-admin-user {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.sub-page-admin-user .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+/**middle**/
+.sub-page-admin-user .title-text {
+  top: 186px;
+  left: 428px;
+  font-family: "Abhaya Libre ExtraBold-Regular", Helvetica;
+  font-weight: 400;
+  color: #116a7b;
+  font-size: 30px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.sub-page-admin-user .survey-infomation {
+  position: absolute;
+  width: 960px;
+  height: 171px;
+  top: 271px;
+  left: 411px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 3px solid;
+  border-color: #116a7b;
+}
+
+.sub-page-admin-user .survey-title {
+  position: absolute;
+  width: 894px;
+  height: 48px;
+  top: 29px;
+  left: 39px;
+}
+
+.sub-page-admin-user .survey-title-text {
+  top: 0;
+  bottom: 5px;
+  left: 15px;
+  font-family: "Roboto", Helvetica;
+  color: black;
+  font-size: 25px;
+  position: absolute;
+  border: none;
+  width: 838px;
+
+}
+
+
+.sub-page-admin-user .survey-explanation {
+  position: absolute;
+  top: 95px;
+  left: 54px;
+}
+
+.sub-page-admin-user .explanation-text {
+  top: 0;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  width: 840px;
+  border: none;
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
+
+.sub-page-admin-user .add-question-button {
+  position: absolute;
+  width: 234px;
+  height: 75px;
+  top: 506px;
+  left: 775px;
+}
+
+
+.sub-page-admin-user .add-question-btn {
+  top: 10px;
+  left: 20px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 23px;
+  padding: 10px;
+  position: absolute;
+  border-radius: 30px;
+  border: 6px solid;
+  border-color: #116a7b;
+  background-color: #ffffff;
+}
+
+/**footer**/
+.sub-page-admin-user .footer {
+  position: absolute;
+  width: 1440px;
+  height: 150px;
+  top: 874px;
+  left: 0;
+  background-color: #116a7b;
+}

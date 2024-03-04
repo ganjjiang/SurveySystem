@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/adminCreateSurvey.css" />
+    <link rel="stylesheet" href="/css/includeCss/adminHeader.css" />
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+    <div class="sub-page-admin-user">
+        <div class="div">
+
+            <!-- include student Header-->
+            <%- include('./include/adminHeader') %>
+                <!-- /include student Header-->
+
+
+                <!-- middle-->
+                <div class="title-text">설문지 생성</div>
+
+                <!-- survey information box-->
+                <form action="">
+                    <div class="survey-infomation">
+                        <div class="survey-title">
+                            <textarea class="survey-title-text" placeholder="설문 제목 입력"></textarea>
+                        </div>
+                        <div class="survey-explanation">
+                            <textarea class="explanation-text" placeholder="설문 설명 입력"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <!-- end of survey information box-->
+
+                <!-- add question button-->
+                <div class="add-question-button">
+                    <input type="button" class="add-question-btn" value="질문 추가하기">
+                </div>
+                <!-- end of button-->
+
+
+
+                <!-- end of middle-->
+
+                <!-- footer-->
+                <div class="footer"></div>
+                <!-- end of footer-->
+        </div>
+    </div>
+</body>
+
+</html>

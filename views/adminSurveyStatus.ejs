@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/adminSurveyStatus.css" />
+    <link rel="stylesheet" href="/css/includeCss/adminHeader.css" />
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+    <div class="sub-page-admin-user">
+        <div class="div">
+
+            <!-- include student Header-->
+            <%- include('./include/adminHeader') %>
+                <!-- /include student Header-->
+
+                <!-- middle-->
+                <div class="page-title">설문 진행 현황</div>
+
+                <!-- drop box-->
+                <select name="" id="" class="select-wrapper">
+                    <option value="제출여부 선택" class="select-wrapper">제출여부 선택</option>
+                    <option value="제출" class="select-wrapper">제출</option>
+                    <option value="미제출" class="select-wrapper">미제출</option>
+                </select>
+
+                <!-- end of drop box-->
+
+                <!-- table-->
+                <table class="list-table">
+                    <tr>
+                        <th>번호</th>
+                        <th>설문 조사</th>
+                        <th>수강생</th>
+                        <th>진행률</th>
+                        <th>제출 여부</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>수학시험 난이도에 관한 설문</td>
+                        <td>강 선주</td>
+                        <td>40%</td>
+                        <td>미제출</td>
+                    </tr>
+                </table>
+
+                <!-- end of table-->
+
+
+                <!-- footer-->
+                <div class="footer"></div>
+        </div>
+    </div>
+</body>
+
+</html>
