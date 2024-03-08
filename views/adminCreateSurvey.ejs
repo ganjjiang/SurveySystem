@@ -8,61 +8,35 @@
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script>
         $(function () {
-            //질문 추가하기 버튼 누르기 
-            $("#addBtn").on('click', addQuestion);
+            //질문 타입 바꾸기 
+            $(".select-question-type").on('change', changeQuestion);
         });
 
-        function addQuestion() {
-            //alert("눌렀쥬?");
+        function changeQuestion() {
+            //alert("눌렀어요");
+            const type = $(this).val();
+            //alert(type);
 
-            const basic = `<div class="multiple-choice">
-            <div class="quesstion-num">1.</div>
-
-            <!-- select question type dropbox-->
-            <div class="change-question-type">
-              <select name="" id="" class="select-question-type">
-                <option class="select-type" selected>객관식</option>
-                <option class="select-type">주관식</option>
-                <option class="select-type">만족도선택</option>
-              </select>
-            </div>
-            <!-- end of dropbox-->
-
-            <!-- question box-->
-            <div class="question-title">
-              <textarea class="question-text" placeholder="질문 입력"></textarea>
-            </div>
-
-            <!-- write multiple choice-->
-            <div class="multiple-choice-box">
-              <div class="choice-num">1.</div>
-              <input type="text" class="choice-text" placeholder="항목 1">
-            </div>
-            <div class="multiple-choice-box">
-              <div class="choice-num">2.</div>
-              <input type="text" class="choice-text" placeholder="항목 2">
-            </div>
-            <!-- end of multiple choice-->
+            if (type == "주관식") {
+                $(".change-spot").html("");
+                let essayQuestion = '<div class="essay-question-box">';
 
 
-            <!-- add question button-->
-            <div class="add-question-button2">
-              <input type="button" class="add-btn" value="질문 추가하기">
-            </div>
+                essayQuestion += '<div class="question-title">';
+                essayQuestion += '<textarea class="question-text" placeholder="질문 입력"></textarea>';
+                essayQuestion += '</div>';
+                essayQuestion += '<div class="essay-answer">';
+                essayQuestion += '<div class="answer-box">';
+                essayQuestion += '<div class="box-text">참여자 답변 입력란</div>';
+                essayQuestion += '</div>';
+                essayQuestion += '</div>';
+                essayQuestion += '</div>';
 
-
-            <!-- add choice button-->
-            <div class="add-choice-button">
-              <input type="button" class="add-btn" value="항목 추가하기">
-            </div>
-
-
-          </div> <!-- end of multiple choice box-->`;
-
-            $(".add-question-button").html('');
-            $(".addQuestSpot").html(basic);
+                $(".change-spot").html(essayQuestion);
+            }
 
         }
+
     </script>
 </head>
 
@@ -89,11 +63,55 @@
                         </div>
                     </div>
 
-                    <div class="add-question-button">
+                    <!-- <div class="add-question-button">
                         <input type="button" class="add-question-btn" id="addBtn" value="질문 추가하기">
-                    </div>
+                    </div> -->
 
-                    <div class="addQuestSpot"></div>
+                    <div class="multiple-choice">
+                        <div class="quesstion-num">1.</div>
+
+                        <!-- select question type dropbox-->
+                        <div class="change-question-type">
+                            <select name="" id="" class="select-question-type">
+                                <option class="select-type multi" selected>객관식</option>
+                                <option class="select-type essay">주관식</option>
+                                <option class="select-type satisfaction">만족도선택</option>
+                            </select>
+                        </div>
+                        <!-- end of dropbox-->
+                        <div class="change-spot">
+                            <!-- question box-->
+                            <div class="question-title">
+                                <textarea class="question-text" placeholder="질문 입력"></textarea>
+                            </div>
+
+                            <!-- write multiple choice-->
+                            <div class="multiple-choice-box">
+                                <div class="choice-num">1.</div>
+                                <input type="text" class="choice-text" placeholder="항목 1">
+                            </div>
+                            <div class="multiple-choice-box">
+                                <div class="choice-num">2.</div>
+                                <input type="text" class="choice-text" placeholder="항목 2">
+                            </div>
+                            <!-- end of multiple choice-->
+
+                            <!-- add choice button-->
+                            <div class="add-choice-button">
+                                <input type="button" class="add-btn" value="항목 추가하기">
+                            </div>
+                        </div><!-- end of change-spot-->
+
+                        <!-- add question button-->
+                        <div class="add-question-button2">
+                            <input type="button" class="add-btn" value="질문 추가하기">
+                        </div>
+
+
+
+
+                    </div> <!-- end of multiple choice box-->
+
                 </form>
                 <!-- end of survey information box-->
 
